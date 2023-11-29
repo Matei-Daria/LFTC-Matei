@@ -1,0 +1,41 @@
+nonterminals: program letter digit nondigit special string number relationalop logicalop arithmeticop conditionop identifier intconst stringconst basictype arraytype consttype type declvar decllist repdecllist factor expression condition simplstmt structstmt stmt stmtlist repstmtlist returnstmt assignstmt iooperation iostmt inside else ifstmt whilestmt
+terminals: { } A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 1 2 3 4 5 6 7 8 9 _ # ^ < <= == /= >= > & | ! + - * / int str list const int str list const : ; 0 if: else: in: out: return = while: "
+starting_symbol: program
+productions:
+program -> { decllist stmtlist }
+letter -> A || B || C || D || E || F || G || H || I || J || K || L || M || N || O || P || Q || R || S || T || U || V || W || X || Y || Z || a || b || c || d || e || f || g || h || i || j || k || l || m || n || o || p || q || r || s || t || u || v || w || x || y || z
+digit -> 0 || 1 || 2 || 3 || 4 || 5 || 6 || 7 || 8 || 9
+nondigit -> 1 || 2 || 3 || 4 || 5 || 6 || 7 || 8 || 9
+special -> _ || # || ^
+string -> letter string || digit string || special string || epsilon
+number -> digit number || epsilon
+relationalop -> < || <= || == || /= || >= || >
+logicalop -> & || | || !
+arithmeticop -> + || - || * || /
+conditionop -> relationalop || logicalop
+identifier -> letter string
+intconst -> 0 || nondigit number
+stringconst -> " string "
+basictype -> int || str
+arraytype -> list basictype
+consttype -> const basictype
+type -> basictype || arraytype || consttype
+declvar -> type : identifier
+decllist -> declvar ; repdecllist
+repdecllist -> ; declvar repdecllist || epsilon
+factor -> expression || identifier
+expression -> factor arithmeticop factor
+condition -> expression conditionop expression
+simplstmt -> assignstmt || iostmt || returnstmt
+structstmt -> ifstmt || whilestmt
+stmt -> simplstmt || structstmt
+stmtlist -> stmt ; repstmtlist
+repstmtlist -> stmt ; || epsilon
+returnstmt -> return
+assignstmt -> identifier = expression
+iooperation -> in: || out:
+iostmt -> iooperation identifier
+inside -> stmt || { stmtlist }
+else -> else: inside || epsilon
+ifstmt -> if: condition inside else
+whilestmt -> while: condition inside

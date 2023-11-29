@@ -1,0 +1,9 @@
+nonterminals: S A B C D
+terminals: a b c d
+starting_symbol: S
+productions:
+S -> a A || a C
+A -> A B
+B -> b
+C -> a C || b C b
+D -> b B || d
