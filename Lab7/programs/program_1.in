@@ -1,0 +1,17 @@
+{
+ 	int: a; int: b; int: c; int: maxim;
+ 	a = 1;
+ 	b = 20;
+ 	c = 0;
+
+ 	if: a > b {
+ 	    maxim = a;
+ 	}
+ 	else {
+ 	    maxim = b;
+ 	};
+
+ 	if: c > b {
+ 	    maxim = c;
+ 	};
+}

@@ -1,0 +1,26 @@
+alphabet: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+states: ODD, EVEN
+initial: ODD
+final: EVEN
+
+transitions:
+(ODD, 0) = EVEN
+(ODD, 1) = ODD
+(ODD, 2) = EVEN
+(ODD, 3) = ODD
+(ODD, 4) = EVEN
+(ODD, 5) = ODD
+(ODD, 6) = EVEN
+(ODD, 7) = ODD
+(ODD, 8) = EVEN
+(ODD, 9) = ODD
+(EVEN, 0) = EVEN
+(EVEN, 1) = ODD
+(EVEN, 2) = EVEN
+(EVEN, 3) = ODD
+(EVEN, 4) = EVEN
+(EVEN, 5) = ODD
+(EVEN, 6) = EVEN
+(EVEN, 7) = ODD
+(EVEN, 8) = EVEN
+(EVEN, 9) = ODD

@@ -1,0 +1,11 @@
+{
+	list int: a; int: l; int: s; int: i;
+	a = [1, 2, 3, 4];
+	l = 5;
+	s = 0;
+	i = 0;
+	while: i /= l {
+		s = s + a[i];
+		i = i + 1;
+	};
+}

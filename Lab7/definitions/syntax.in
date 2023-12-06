@@ -1,0 +1,38 @@
+# STARTING RULES
+program = "{" decllist stmtlist "}"
+
+# GENERAL STATEMENTS
+letter = "A" | "B" | ... | "Z" | "a" | ... | "z"
+digit = "0" | "1" | ... | "9"
+nondigit = "1" | ... | "9"
+special = "_" | "#" | "^"
+
+identifier = letter {letter | digit | special}
+intconst = "0" | nondigit {digit}
+stringconst = '"' {letter | digit | special} '"'
+
+relationalop = "<" | "<=" | "==" | "/=" | ">=" | ">"
+logicalop = "&" | "|" | "!"
+arithmeticop = "+" | "-" | "*" | "/"
+
+basictype = "int" | "str" 
+arraytype = "list" basictype
+consttype = "const" basictype
+type = basictype | arraytype | consttype
+declvar = type ":" identifier
+decllist = declvar {";" declvar}
+
+factor = expression | identifier
+expression = factor {"+" | "-" | "/" | "*"} factor 
+condition = expression (relationalop | logicalop) expression
+
+returnstmt = "return"
+assignstmt = identifier "=" expression
+iostmt = ("in:" | "out:") identifier
+ifstmt = "if:" condition (stmt | ["{"] stmt ["}"]) ["else:" (stmt | ["{"] stmt ["}])]
+whilestmt = "while:" condition (stmt | ["{"] stmt ["}"])
+
+simplstmt = assignstmt | iostmt | returnstmt
+structstmt = ifstmt | whilestmt
+stmt = simplstmt | structstmt
+stmtlist = stmt ";" {stmt ";"}
