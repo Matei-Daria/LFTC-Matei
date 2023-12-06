@@ -1,0 +1,12 @@
+{
+	int: a;int: l;int: s;int: i;
+	s = 0+;
+	a = [1,2;3];
+	l = 3;
+	i = 0;
+
+	while: i /= l {
+	    s = 467 + a{i};
+	    i = i + 1
+	};
+}

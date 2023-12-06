@@ -1,0 +1,17 @@
+{
+ 	int: a; int: b; int: c; int: minim;
+ 	a = 1;
+ 	b = 20;
+ 	c = 0;
+
+ 	if: a < b {
+ 	    minim = a;
+ 	}
+ 	else {
+ 	    minim = b;
+ 	};
+
+ 	if: c < b {
+ 	    minim = c;
+ 	};
+}

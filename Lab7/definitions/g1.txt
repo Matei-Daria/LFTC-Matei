@@ -1,0 +1,9 @@
+nonterminals: E T B F C
+terminals: + * id ( )
+starting_symbol: E
+productions:
+E -> T B
+B -> + T B || epsilon
+T -> F C
+C -> * F C || epsilon
+F -> id || ( E )
