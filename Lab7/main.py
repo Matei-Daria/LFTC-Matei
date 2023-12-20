@@ -38,10 +38,10 @@ def main():
         gr_path = "definitions/g2.txt"
         tree_path = "out/TREE.out"
 
-        grammer = Grammar()
-        grammer.readFromFile(gr_path)
+        grammar = Grammar()
+        grammar.readFromFile(gr_path)
 
-        parser = LL1(grammer)
+        parser = LL1(grammar)
         parser.initialize()
         parser.pretty_print_parsing_table()
         tree = parser.parse_input(program.pif)

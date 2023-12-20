@@ -46,10 +46,10 @@ class Grammar:
                         self.__productions[lhs] = [rhs_list]
 
     def checkCFG(self) -> bool:
-        has_s = False
+        has_starting_symbol = False
         for key in self.__productions.keys():
             if key == self.__starting_symbol:
-                has_s = True
+                has_starting_symbol = True
             if key not in self.__nonterminals:
                 return False
 
