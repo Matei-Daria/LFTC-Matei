@@ -1,5 +1,5 @@
 nonterminals: program letter digit nondigit special string number relationalop logicalop arithmeticop conditionop identifier intconst arrayints operand reparrayints stringconst basictype arraytype arraysegmentation consttype type declvar decllist repdecllist expression rhs condition simplstmt structstmt stmt stmtlist repstmtlist returnstmt assignchoice assignstmt iooperation iostmt elsestmt inside ifstmt whilestmt
-terminals: [ ] { } A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 1 2 3 4 5 6 7 8 9 _ # ^ < <= == /= >= > & | ! + - * / int str list const int str const : ; 0 if else in out return = while " ,
+terminals: [ ] { } A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 1 2 3 4 5 6 7 8 9 _ # ^ < <= == /= >= > & | ! + - * / int str list const : ; if else in out return = while " ,
 starting_symbol: program
 productions:
 program -> { decllist stmtlist }
